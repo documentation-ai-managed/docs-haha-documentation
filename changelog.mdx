@@ -1,0 +1,142 @@
+---
+title: Changelog
+description: History of updates, new features, and improvements to the haha Documentation platform.
+---
+
+## Overview
+
+haha Documentation keeps you up to date with the latest features, performance improvements, and bug fixes. Review recent releases below to see what's new. You can upgrade your instance easily using the provided CLI or API methods.
+
+<Columns cols={3}>
+  <Card title="v1.2.0" icon="git-branch" href="#">
+    Real-time collaboration and enhanced search.
+  </Card>
+  <Card title="v1.1.0" icon="package" href="#">
+    Dark mode and analytics dashboard.
+  </Card>
+  <Card title="v1.0.0" icon="rocket" href="#">
+    Initial stable release with core features.
+  </Card>
+</Columns>
+
+## Recent Releases
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added real-time collaboration for teams to edit docs simultaneously
+- Introduced advanced search with full-text indexing and filters
+
+## Improvements
+
+- Optimized rendering performance by `>30%` for large documentation sites
+- Enhanced mobile responsiveness with better touch navigation
+
+## Bug Fixes
+
+- Fixed markdown parsing issues with nested lists
+- Resolved authentication errors during webhook callbacks
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Implemented dark mode toggle with automatic system preference detection
+- Added built-in analytics dashboard for page views and engagement metrics
+
+## Improvements
+
+- Streamlined sidebar navigation with sticky headers
+- Improved image optimization for faster load times
+
+## Bug Fixes
+
+- Corrected table rendering glitches on certain browsers
+- Patched security vulnerability in version pinning (CVE-2024-5678)
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["feature", "breaking"]}>
+
+## New Features
+
+- Core MDX rendering engine with full component support
+- Integrated version control with git-like branching
+- User authentication via OAuth providers
+
+## Breaking Changes
+
+- Updated configuration schema; migrate your `haha.config.js` files
+
+## Bug Fixes
+
+- Initial stability improvements for production deployments
+
+</Update>
+
+## How to Upgrade
+
+Follow these steps to update your haha Documentation instance to the latest version.
+
+<Steps>
+  <Step title="Check Current Version" icon="package">
+    Run the version check command:
+
+    <CodeGroup tabs="CLI,npm">
+      ```bash
+      haha-docs version
+      ```
+      ```bash
+      npm list haha-docs
+      ```
+    </CodeGroup>
+  </Step>
+  <Step title="Backup Configuration" icon="database">
+    Export your settings:
+
+    ```bash
+    haha-docs export-config > backup.json
+    ```
+  </Step>
+  <Step title="Install Update" icon="download">
+    Update via package manager:
+
+    <Tabs>
+      <Tab title="npm" icon="package">
+        ```bash
+        npm install haha-docs@latest
+        ```
+      </Tab>
+      <Tab title="Docker" icon="docker">
+        ```bash
+        docker pull haha-docs:latest
+        docker run -p 3000:3000 haha-docs:latest
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step title="Verify and Restart" icon="check-circle">
+    Restart your server and test key features.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Subscribe to our RSS feed at `/rss/changelog.xml` to get notified of new releases automatically.
+</Callout>
+
+## Upcoming Changes
+
+<Expandable title="Sneak Peek: v1.3.0" default-open="false">
+
+Expect AI-powered content suggestions and multi-language support in the next release. Track progress on our GitHub repository.
+
+| Feature | Status | ETA |
+|---------|--------|-----|
+| AI Suggestions | In Development | Q4 2024 |
+| Multi-Language | Planned | Q1 2025 |
+| Plugin Marketplace | Beta | November 2024 |
+
+</Expandable>

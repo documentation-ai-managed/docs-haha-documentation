@@ -1,0 +1,157 @@
+---
+title: Managing Your Documentation
+description: Step-by-step instructions on creating, organizing, and maintaining documentation within your projects.
+---
+
+## Overview
+
+You manage your haha Documentation space by creating pages, organizing them into a logical structure, applying templates, and collaborating with your team. This guide walks you through each process to keep your project docs clear and up-to-date.
+
+<Callout kind="tip">
+
+Start with a clear folder structure to make navigation intuitive for your users.
+
+</Callout>
+
+## Creating and Editing Pages
+
+Follow these steps to create your first documentation page.
+
+<Steps>
+  <Step title="Create a New Page" icon="plus">
+    Navigate to your project dashboard. Click the `New Page` button and select `MDX Document`.
+
+    Choose a file name like `quickstart.mdx`.
+  </Step>
+  <Step title="Add Frontmatter" icon="settings">
+    Every page requires YAML frontmatter at the top:
+
+````mdx
+```yaml
+---
+title: Quickstart Guide
+description: Get started with haha in minutes.
+---
+```
+````
+  </Step>
+  <Step title="Write Content" icon="edit-3">
+    Use H2 headings for sections and add components like `<Callout>` for emphasis.
+
+    Preview changes in real-time using the built-in editor.
+  </Step>
+  <Step title="Publish" icon="upload">
+    Save and publish. Your page appears in the sidebar navigation automatically.
+  </Step>
+</Steps>
+
+## Organizing Content Structure
+
+Organize pages into folders for better scalability.
+
+<Columns cols={2}>
+  <Card title="Folder Structure" icon="folder">
+    Use nested folders like `docs/guides/` and `docs/api/`.
+
+    Example tree:
+
+    ```
+    docs/
+    ├── quickstart.mdx
+    ├── guides/
+    │   └── advanced.mdx
+    └── api/
+        └── endpoints.mdx
+    ```
+  </Card>
+  <Card title="Navigation Rules" icon="menu">
+    Pages inherit parent folder names in the sidebar. Rename folders to update slugs.
+  </Card>
+</Columns>
+
+<Expandable title="Advanced Organization Tips" default-open="false">
+
+- Limit top-level folders to 5-7 for usability.
+- Use index.mdx as landing pages for sections.
+
+</Expandable>
+
+## Using Templates and Sections
+
+Templates speed up page creation with pre-built components.
+
+<Tabs>
+  <Tab title="Basic Template" icon="file-text">
+    Copy this starter:
+
+````mdx
+```mdx
+---
+title: New Page
+description: Page description.
+---
+
+## Overview
+
+Your content starts here.
+```
+````
+  </Tab>
+  <Tab title="API Template" icon="code">
+    For endpoints, include `<Request>` and `<Response>`:
+
+````jsx
+```jsx
+<Request tabs="JavaScript,cURL">
+  ```javascript
+  const res = await fetch('https://api.haha.com/v1/users');
+  ```
+  ```bash
+  curl https://api.haha.com/v1/users
+  ```
+</Request>
+```
+````
+  </Tab>
+</Tabs>
+
+## Collaboration Features
+
+Enable team workflows with these tools.
+
+<CodeGroup tabs="Invite,Review,Version">
+  ```bash
+  # Invite collaborators
+  /invite @team-member role=editor
+  ```
+  ```bash
+  # Start a review
+  /review quickstart.mdx
+  ```
+  ```bash
+  # View version history
+  /history quickstart.mdx
+  ```
+</CodeGroup>
+
+| Feature       | Description                          | Access Level |
+|---------------|--------------------------------------|--------------|
+| Real-time Edits | Edit simultaneously with cursors    | Editor+     |
+| Comments      | Inline feedback on sections         | Viewer+     |
+| Version History | Rollback to previous versions      | Admin       |
+
+<Callout kind="info">
+
+Use `@mentions` in comments to notify teammates instantly.
+
+</Callout>
+
+## Best Practices
+
+Maintain consistency by enforcing these rules:
+
+- Always start with frontmatter.
+- Use 5-8 components per page for rich content.
+- Escape special characters like `{variable}` and `<Component>` in prose.
+
+Your documentation evolves as your project grows—review structure quarterly.
